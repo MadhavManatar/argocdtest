@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ipoint-frontend-stage-deployment
+  namespace: ipoint-dev
+spec:
+  replicas: 2  
+  selector:
+    matchLabels:
+      app: ipoint-frontend-dev
+  template:
+    metadata:
+      labels:
+        app: ipoint-frontend-dev
+    spec:
+      containers:
+      - name: ipoint-frontend-dev-container
+        image: madhav0407/ipoint-dev:latest
+        imagePullPolicy: "Always"
+        ports:
+        - containerPort: 80 
