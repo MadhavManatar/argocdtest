@@ -16,6 +16,5 @@ spec:
       containers:
       - name: ipoint-frontend-dev-container
         image: madhav0407/ipoint-dev:latest
-        imagePullPolicy: "Always"
         ports:
         - containerPort: 80 
